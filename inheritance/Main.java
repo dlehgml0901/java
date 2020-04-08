@@ -9,10 +9,9 @@ public class Main {
 		while (true) {
 			System.out.println("0.Exit, 1.Go");
 			switch (scan.nextInt()) {
-			case 0:
-				
-				return;
+			case 0: return;
 			case 1:
+				System.out.println("Go");
 				break;
 			}
 		}
