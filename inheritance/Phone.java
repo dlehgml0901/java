@@ -23,4 +23,9 @@ public class Phone {
 	public String getCompany() {
 		return company;
 	}
+	public Phone(String phoneNumber, String name, String company) {
+		this.phoneNumber = phoneNumber;
+		this.name = name;
+		this.company = company;
+	}
 }
