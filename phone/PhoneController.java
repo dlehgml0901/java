@@ -1,13 +1,15 @@
 package com.jse.phone;
 
-import java.util.Scanner;
 import com.jse.util.Constants;
 import javax.swing.JOptionPane;
 
 public class PhoneController {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		PhoneService service = new PhoneService();
+		Phone phone = null;
+		CelPhone celPhone = null;
+		Iphone iPhone = null;
+		GalaxyNote galaxyNote = null;
 		String message = "";
 		while (true) {
 			System.out.println();
@@ -17,6 +19,11 @@ public class PhoneController {
 //				String[] values = msg.split(",");
 				for (int i = 0; i < 3; i++) {
 					String[] values = JOptionPane.showInputDialog(Constants.PHONE_MENU).split(",");
+//					phone = new Phone();
+//					phone.setPhoneNumber(values[0]);
+//					phone.setName(values[1]);
+//					phone.setCompany(values[2]);
+//					service.add(phone);
 					service.add(new Phone(values[0], values[1], values[2]));
 				}
 				break;
@@ -25,14 +32,18 @@ public class PhoneController {
 				message = "";
 				for (int i = 0; i < 3; i++) {
 					message += phones[i].toString()+"\n";
-//							String.format("출력 : %s, %s, %s \n", 
-//							phones[i].getPhoneNumber(), phones[i].getName(), phones[i].getCompany());
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
 			case "3":
 				for (int i = 0; i < 3; i++) {
 					String[] values = JOptionPane.showInputDialog(Constants.CELPHONE_MENU).split(",");
+//					celPhone = new CelPhone();
+//					celPhone.setPhoneNumber(values[0]);
+//					celPhone.setName(values[1]);
+//					celPhone.setCompany(values[2]);
+//					celPhone.setMove(true);
+					
 					service.add(new CelPhone(values[0], values[1], values[2], true));
 				}
 				break;

@@ -48,11 +48,6 @@ class CelPhone extends Phone{
 	}
 
 	public void setPortable(boolean portable) {
-//		if (portable) {
-//			this.move = "휴대가능";
-//		}else {
-//			this.move = "휴대 불가능";
-//		}
 		this.move = (portable) ? "휴대가능" : "휴대불가능";
 	}
 
@@ -65,7 +60,6 @@ class CelPhone extends Phone{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() + ", portable = " + portable + ", move = " + move;
 	}
 	
@@ -88,7 +82,6 @@ class Iphone extends CelPhone{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() + ", search = " + search;
 	}
 }
@@ -110,7 +103,6 @@ class GalaxyNote extends Iphone {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() + ", bigSize = " + bigSize;
 	}
 
