@@ -99,25 +99,25 @@ public class GameController {
 				
 				System.out.println("결과 : " + kaup.kaup());
 				break;
-			case 6:
-				System.out.println("회원가입");
-				System.out.print("아이디입력 : ");
-				String id = scan.next();
-				member.setId(id);
-				break;
-			case 7:
-				System.out.println("로그인");
-				System.out.print("아이디입력 : ");
-				String id2 = scan.next();
-				
-				String returnId = member.getId();
-				System.out.println("로그인된 아이디 : " + returnId);
-				if (id2.equals(returnId)) {
-					System.out.println("로그인 성공.");
-				}else {
-					System.out.println("로그인 실패.");
-				}
-				break;
+//			case 6:
+//				System.out.println("회원가입");
+//				System.out.print("아이디입력 : ");
+//				String id = scan.next();
+////				member.setId(id);
+//				break;
+//			case 7:
+//				System.out.println("로그인");
+//				System.out.print("아이디입력 : ");
+//				String id2 = scan.next();
+//				
+////				String returnId = member.getId();
+//				System.out.println("로그인된 아이디 : " + returnId);
+//				if (id2.equals(returnId)) {
+//					System.out.println("로그인 성공.");
+//				}else {
+//					System.out.println("로그인 실패.");
+//				}
+//				break;
 			}
 		}
 	}

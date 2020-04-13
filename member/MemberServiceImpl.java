@@ -1,5 +1,9 @@
 package com.jse.member;
 
+import java.util.Arrays;
+
+import com.jse.grade.Grade;
+
 public class MemberServiceImpl implements MemberService{
 	private Member[] members;
 	private int count;
@@ -12,7 +16,6 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public Member[] getMembers() {
-		// TODO Auto-generated method stub
 		return members;
 	}
 	@Override
