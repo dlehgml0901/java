@@ -6,7 +6,7 @@ public class GradeServiceImpl implements GradeService{
 	private int count;
 	
 	public GradeServiceImpl() {
-		grades = new Grade[3];
+		grades = new Grade[5];
 		count = 0;
 	}
 	@Override
@@ -32,11 +32,11 @@ public class GradeServiceImpl implements GradeService{
 	}
 	@Override
 	public int total(Grade grade) {
-		return grade.getKorean() + grade.getEnglish() + grade.getMath();
+		return grade.getKorean() + grade.getEnglish() + grade.getMath() + grade.getJava();
 	}
 	@Override
 	public int aver(Grade grade) {
-		return total(grade) / 3;
+		return total(grade) / 4;
 	}
 	@Override
 	public String record(Grade grade) {
@@ -62,7 +62,7 @@ public class GradeServiceImpl implements GradeService{
 	public String printGrades() {
 		String result = "";
 		Grade[] grades = getGrades();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			result += String.format(" %s : 총점 %d점, 평균 %d점, 학점 : %s \n",
 					grades[i].getName(), total(grades[i]), aver(grades[i]), record(grades[i]));
 		}

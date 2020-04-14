@@ -2,6 +2,8 @@ package com.jse.member;
 
 import java.util.Arrays;
 
+import javax.swing.JOptionPane;
+
 import com.jse.grade.Grade;
 
 public class MemberServiceImpl implements MemberService{
@@ -22,5 +24,18 @@ public class MemberServiceImpl implements MemberService{
 	public void add(Member member) {
 		members[count] = member;
 		count++;
+	}
+	@Override
+	public Member login(Member member) {
+		Member returnMember = null;
+		for (int i = 0; i < members.length; i++) {
+			if (member.getUserid().equals(members[i].getUserid()) && 
+					member.getPasswd().equals(members[i].getPasswd())) {
+				returnMember = new Member();
+				returnMember = members[i];
+				break;
+			}
+		}
+		return returnMember;
 	}
 }
