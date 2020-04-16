@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CardController {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		CardService service = new CardService();
+		CardService service = new CardServiceImpl();
 		Card card = null;
 		while (true) {
 			System.out.println("0.Exit, 1.카드 3장 받기, 2.카드 3장 확인");
@@ -21,7 +21,7 @@ public class CardController {
 				}
 				break;
 			case 2:
-				Card[] cards = service.getCards();
+				Card[] cards = service.list();
 				for (int i = 0; i < 3; i++) {
 					System.out.println(String.format("모양 : %s, %d", cards[i].getKind(), cards[i].getNumber()));
 				}

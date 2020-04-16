@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class PhoneController {
 	public static void main(String[] args) {
-		PhoneService service = new PhoneService();
+		PhoneService service = new PhoneServiceImpl();
 		Phone phone = null;
 		CelPhone celPhone = null;
 		Iphone iPhone = null;
@@ -28,7 +28,7 @@ public class PhoneController {
 				}
 				break;
 			case "2":
-				Phone[] phones = service.getPhones();
+				Phone[] phones = service.phonelist();
 				message = "";
 				for (int i = 0; i < 3; i++) {
 					message += phones[i].toString()+"\n";
@@ -48,7 +48,7 @@ public class PhoneController {
 				}
 				break;
 			case "4":
-				CelPhone[] celPhones = service.getCelPhones();
+				CelPhone[] celPhones = service.celPhonelist();
 				message = "";
 				for (int i = 0; i < 3; i++) {
 					message += celPhones[i].toString()+"\n";
@@ -62,7 +62,7 @@ public class PhoneController {
 				}
 				break;
 			case "6":
-				Iphone[] iphones = service.getIphones();
+				Iphone[] iphones = service.iPhonelist();
 				message = "";
 				for (int i = 0; i < 3; i++) {
 					message += iphones[i].toString()+"\n";
@@ -76,7 +76,7 @@ public class PhoneController {
 				}
 				break;
 			case "8":
-				GalaxyNote[] galaxyNotes = service.getGalaxyNotes();
+				GalaxyNote[] galaxyNotes = service.galaxyNotelist();
 				message = "";
 				for (int i = 0; i < 3; i++) {
 					message += galaxyNotes[i].toString()+"\n";

@@ -1,5 +1,8 @@
 package com.jse.member2;
 
-public class Member {
+import lombok.Data;
 
+@Data
+public class Member {
+	public String name, userid, password, ssn, addr;
 }
