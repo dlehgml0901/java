@@ -18,10 +18,12 @@ public class MemberServiceImpl implements MemberService{
 		members[count] = member;
 		count++;
 	}
+
 	@Override
 	public Member[] list() {
 		return members;
 	}
+
 	@Override
 	public Member[] searchByName(String name) {
 		Member[] searchs = null;
@@ -34,19 +36,19 @@ public class MemberServiceImpl implements MemberService{
 					searchs[j] = members[i];
 					j++;
 					if (searchCount == j) {
-						break;						
+						break;
 					}
 				}
 			}
 		}
-		
 		return searchs;
 	}
+
 	@Override
 	public Member[] searchByGender(String ssn) {
-		Member[] searchs = null;
-		return searchs;
+		return null;
 	}
+
 	@Override
 	public Member detail(String userid) {
 		Member detail = null;
@@ -59,10 +61,12 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return detail;
 	}
+
 	@Override
 	public int count() {
 		return count;
 	}
+
 	@Override
 	public int count(String name) {
 		int rcount = 0;
@@ -73,6 +77,7 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return rcount;
 	}
+
 	@Override
 	public Member login(Member member) {
 		Member returnMember = null;
@@ -85,24 +90,27 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return returnMember;
 	}
+
 	@Override
 	public void update(Member member) {
-		 for (int i = 0; i < count; i++) {
+		for (int i = 0; i < count; i++) {
 			if (member.getUserid().equals(members[i].getUserid())) {
 				members[i].setPasswd(member.getPasswd());
 				break;
 			}
 		}
 	}
+
 	@Override
 	public void delete(Member member) {
 		for (int i = 0; i < count; i++) {
 			if (member.getUserid().equals(members[i].getUserid()) && 
 					member.getPasswd().equals(members[i].getPasswd())) {
-				members[i] = members[count-1];
+				members[i] = members[count -1];
 				members[count-1] = null;
 				count--;
 			}
 		}
 	}
+	
 }
