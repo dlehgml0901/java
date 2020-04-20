@@ -9,6 +9,7 @@ import com.jse.grade.Grade;
 public class MemberServiceImpl implements MemberService{
 	private Member[] members;
 	private int count;
+	
 	public MemberServiceImpl() {
 		members = new Member[5];
 		count = 0;
@@ -30,7 +31,7 @@ public class MemberServiceImpl implements MemberService{
 		int searchCount = count(name);
 		if (searchCount != 0) {
 			searchs = new Member[searchCount];
-			int j = 0;
+			int j=0;
 			for (int i = 0; i < count; i++) {
 				if (name.equals(members[i].getName())) {
 					searchs[j] = members[i];
@@ -104,13 +105,15 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void delete(Member member) {
 		for (int i = 0; i < count; i++) {
-			if (member.getUserid().equals(members[i].getUserid()) && 
+			if (member.getUserid().equals(members[i].getUserid()) &&
 					member.getPasswd().equals(members[i].getPasswd())) {
 				members[i] = members[count -1];
-				members[count-1] = null;
+				members[count -1] = null;
 				count--;
+				break;
 			}
 		}
 	}
+
 	
 }
